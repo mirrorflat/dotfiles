@@ -1,3 +1,9 @@
+" Install or update plugins:
+" call minpac#update()
+" clean plugins:
+" call minpac#clean()
+" ref: https://qiita.com/k-takata/items/36c240a23f88d699ce86
+
 packadd minpac
 call minpac#init()
 call minpac#add('k-takata/minpac', {'type': 'opt'})
