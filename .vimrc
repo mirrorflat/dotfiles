@@ -1,9 +1,22 @@
+" ########
+" INSTALL
+" ########
+" mkdir -p ~/.vim/pack/minpac/opt
+" cd ~/.vim/pack/minpac/opt
+" git clone https://github.com/k-takata/minpac.git
+
+" ===========
+" OPERATIONS
+" ===========
 " Install or update plugins:
 " call minpac#update()
 " clean plugins:
 " call minpac#clean()
 " ref: https://qiita.com/k-takata/items/36c240a23f88d699ce86
 
+" =====
+" MAIN
+" =====
 packadd minpac
 call minpac#init()
 call minpac#add('k-takata/minpac', {'type': 'opt'})
