@@ -38,7 +38,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
 
 
-" autopep8
+" auto formatting
 " original http://stackoverflow.com/questions/12374200/using-uncrustify-with-vim/15513829#15513829
 function! Preserve(command)
     " Save the last search.
