@@ -1,9 +1,22 @@
 " ########
 " INSTALL
 " ########
-" mkdir -p ~/.vim/pack/minpac/opt
-" cd ~/.vim/pack/minpac/opt
-" git clone https://github.com/k-takata/minpac.git
+" initial:
+" $ mkdir -p ~/.vim/pack/minpac/opt
+" $ cd ~/.vim/pack/minpac/opt
+" $ git clone https://github.com/k-takata/minpac.git
+" in python environment:
+" $ pip install flake8
+" $ pip install flake8-coding
+" $ pip install flake8-docstrings
+" $ pip install flake8-quotes
+" $ pip install flake8-import-order
+" $ pip install pep8-naming
+" $ pip install flake8-print
+" $ pip install flake8-todo
+" $ pip install pyformat
+" $ pip install isort
+" $ pip install radon
 
 " ===========
 " OPERATIONS
