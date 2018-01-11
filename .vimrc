@@ -74,7 +74,7 @@ function! Preserve(command)
 endfunction
 
 function! AutoFormat()
-    call Preserve(':silent %!pyformat --remove-all-unused-imports -a test.py |patch -o /tmp/pyformat.py test.py  > /dev/null && if [ $(cat /tmp/pyformat.py |wc -l ) -gt 1 ] ; then isort -d /tmp/pyformat.py;  else  isort -d test.py; fi')
+    call Preserve(':silent %!pyformat --remove-all-unused-imports -a % |patch -o /tmp/pyformat.py %  > /dev/null && if [ $(cat /tmp/pyformat.py |wc -l ) -gt 1 ] ; then isort -d /tmp/pyformat.py;  else  isort -d %; fi')
 endfunction
 
 autocmd FileType python nnoremap <S-f> :call AutoFormat()<CR>
