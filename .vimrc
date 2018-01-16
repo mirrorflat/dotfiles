@@ -8,6 +8,7 @@
 " in python environment:
 " $ pip install flake8
 " $ pip install flake8-coding
+" $ pip install flake8-copyright
 " $ pip install flake8-docstrings
 " $ pip install flake8-quotes
 " $ pip install flake8-import-order
