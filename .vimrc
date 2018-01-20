@@ -18,6 +18,7 @@
 " $ pip install pyformat
 " $ pip install isort
 " $ pip install radon
+" $ pip install docutils pygments
 
 " ===========
 " OPERATIONS
