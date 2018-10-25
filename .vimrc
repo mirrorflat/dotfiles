@@ -91,6 +91,14 @@ endfunction
 
 autocmd FileType python nnoremap <S-f> :call AutoFormat()<CR>
 
+"disable syntastic on a per buffer basis (some work files blow it up)
+function! SyntasticDisableBuffer()
+    let b:syntastic_skip_checks = 1
+    SyntasticReset
+    echo 'Syntastic disabled for this buffer'
+endfunction
+
+command! SyntasticDisableBuffer call SyntasticDisableBuffer()
 
 " vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
@@ -145,6 +153,6 @@ autocmd BufNewFile,BufRead *.py nnoremap <C-P> :!python %<CR>
 
 
 " Execute sql script with ,s
-autocmd BufNewFile,BufRead *.sql nnoremap ,s :!psql -Uterry -hlocalhost -f % cxm<CR>
+autocmd BufNewFile,BufRead *.sql nnoremap ,s :!psql -Utakayoshi -hlocalhost -f % <CR>
 
 
