@@ -28,6 +28,9 @@
 " clean plugins:
 " call minpac#clean()
 " ref: https://qiita.com/k-takata/items/36c240a23f88d699ce86
+" $ brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+" $ touch ~/devel/.tags
+" ref: https://qiita.com/aratana_tamutomo/items/59fb4c377863a385e032
 
 " =====
 " MAIN
@@ -156,3 +159,27 @@ autocmd BufNewFile,BufRead *.py nnoremap <C-P> :!python %<CR>
 autocmd BufNewFile,BufRead *.sql nnoremap ,s :!psql -Utakayoshi -hlocalhost -f % <CR>
 
 
+" ctag
+set fileformats=unix,dos,mac
+set fileencodings=utf-8,sjis
+
+set tags=.tags;$HOME
+
+function! s:execute_ctags() abort
+  " 探すタグファイル名とディレクトリ
+  let tag_name = '.tags'
+  let tags_dirpath = '~/devel/'
+  " ディレクトリを遡り、タグファイルを探し、パス取得
+  let tags_path = findfile(tag_name, '.;')
+  " タグファイルパスが見つからなかった場合
+  if tags_path ==# ''
+    return
+  endif
+  " タグファイルのディレクトリに移動して、ctagsをバックグラウンド実行（エラー出力破棄）
+  execute 'silent !cd' tags_dirpath '&& ctags -R -f' tag_name '2> /dev/null &'
+endfunction
+
+augroup ctags
+  autocmd!
+  autocmd BufWritePost * call s:execute_ctags()
+augroup END
