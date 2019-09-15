@@ -1,10 +1,16 @@
 " ########
 " INSTALL
 " ########
-" initial:
+"
+" initial(win):
+" $ cd $HOME
+" $ git clone https://github.com/k-takata/minpac.git vimfiles\pack\minpac\opt\minpac
+"
+" initial(mac):
 " $ mkdir -p ~/.vim/pack/minpac/opt
 " $ cd ~/.vim/pack/minpac/opt
 " $ git clone https://github.com/k-takata/minpac.git
+"
 " in python environment:
 " $ pip install flake8
 " $ pip install flake8-coding
@@ -27,6 +33,7 @@
 " call minpac#update()
 " clean plugins:
 " call minpac#clean()
+"
 " ref: https://qiita.com/k-takata/items/36c240a23f88d699ce86
 " $ brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 " $ touch ~/devel/.tags
