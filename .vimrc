@@ -42,7 +42,8 @@ call minpac#add('vim-syntastic/syntastic')
 call minpac#add('nathanaelkane/vim-indent-guides')
 call minpac#add('vim-scripts/Align')
 call minpac#add('vim-scripts/SQLUtilities')
-call minpac#add('kannokanno/previm')
+call minpac#add('previm/previm')
+call minpac#add('tyru/open-browser.vim')
 
 
 " previm
@@ -50,7 +51,6 @@ call minpac#add('kannokanno/previm')
 " following command was needed to show preview correctly.
 " 'opacity' in mermaid.min.css make things wrong...
 " $ rm ~/.vim/pack/minpac/start/previm/preview/css/lib/mermaid.min.css
-let g:previm_open_cmd = "open -a 'Google Chrome'"
 let g:previm_show_header = 0
 
 
