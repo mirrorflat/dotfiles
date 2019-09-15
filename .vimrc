@@ -133,7 +133,7 @@ function! AutoFormat()
     if has('mac') || has('unix')
         call Preserve(':silent %!pyformat --remove-all-unused-imports -a % |patch -o /tmp/pyformat.py %  > /dev/null && if [ $(cat /tmp/pyformat.py |wc -l ) -gt 1 ] ; then isort -d /tmp/pyformat.py;  else  isort -d %; fi')
     elseif has('win32') || has ('win64')
-        " do some if needed.
+        " Winowsで開発する場合は記述対応
     endif
 endfunction
 autocmd FileType python nnoremap <S-f> :call AutoFormat()<CR>
@@ -143,34 +143,24 @@ autocmd FileType python nnoremap <S-f> :call AutoFormat()<CR>
 " Tag jump
 " -----------
 
-" jump
-" -----
-set tags=tags
-nnoremap <C-]> g<C-]>
-
-
 " ctag
 " -----
+"  $HOME/.tagsにまとめてたけど大きくなるのでシンプルにした
+"  外部ライブラリを解析して加える解析例
+"  ctags -a -f .tags -R ~/.pyenv/versions/3.6.3_usa/lib/python3.6/site-packages/
 set fileformats=unix,dos,mac
 set fileencodings=utf-8,sjis
 set tags=.tags;$HOME
-function! s:execute_ctags() abort
-  " 探すタグファイル名とディレクトリ
-  let tag_name = '.tags'
-  let tags_dirpath = '~/devel/'
-  " ディレクトリを遡り、タグファイルを探し、パス取得
-  let tags_path = findfile(tag_name, '.;')
-  " タグファイルパスが見つからなかった場合
-  if tags_path ==# ''
-    return
-  endif
-  " タグファイルのディレクトリに移動して、ctagsをバックグラウンド実行（エラー出力破棄）
-  execute 'silent !cd' tags_dirpath '&& ctags -R -f' tag_name '2> /dev/null &'
-endfunction
 augroup ctags
-  autocmd!
-  autocmd BufWritePost * call s:execute_ctags()
+    autocmd!
+    if has('mac') || has('unix')
+        autocmd BufWritePost * silent !ctags -a -R -f.tags 2> /dev/null
+    elseif has('win32') || has ('win64')
+        " Winowsで開発する場合は記述対応
+    endif
 augroup END
+" 複数あるときはリスト表示
+nnoremap <C-]> g<C-]>
 
 
 " --------------
