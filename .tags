@@ -1,0 +1,29 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/c06ea57/
+<	.vimrc	/^vnoremap < <gv$/;"	m
+<C-]>	.vimrc	/^nnoremap <C-]> g<C-]>$/;"	m
+<Space>.	.vimrc	/^nnoremap <Space>. :<C-u>edit ~\/.vimrc<CR>$/;"	m
+<Space>s.	.vimrc	/^nnoremap <Space>s. :<C-u>source ~\/.vimrc<CR>$/;"	m
+>	.vimrc	/^vnoremap > >gv$/;"	m
+AutoFormat	.vimrc	/^function! AutoFormat()$/;"	f
+Preserve	.vimrc	/^function! Preserve(command)$/;"	f
+SyntasticDisableBuffer	.vimrc	/^command! SyntasticDisableBuffer call SyntasticDisableBuffer()$/;"	c
+SyntasticDisableBuffer	.vimrc	/^function! SyntasticDisableBuffer()$/;"	f
+cch	.vimrc	/^augroup cch$/;"	a
+ctags	.vimrc	/^augroup ctags$/;"	a
+dotfiles	README.rst	/^dotfiles$/;"	c
+g:indent_guides_auto_colors	.vimrc	/^let g:indent_guides_auto_colors = 0$/;"	v
+g:indent_guides_color_change_percent	.vimrc	/^let g:indent_guides_color_change_percent = 30$/;"	v
+g:indent_guides_enable_on_vim_startup	.vimrc	/^let g:indent_guides_enable_on_vim_startup = 1$/;"	v
+g:indent_guides_guide_size	.vimrc	/^let g:indent_guides_guide_size = 1$/;"	v
+g:previm_show_header	.vimrc	/^let g:previm_show_header = 0$/;"	v
+g:syntastic_always_populate_loc_list	.vimrc	/^let g:syntastic_always_populate_loc_list = 1$/;"	v
+g:syntastic_auto_loc_list	.vimrc	/^let g:syntastic_auto_loc_list = 1$/;"	v
+g:syntastic_check_on_open	.vimrc	/^let g:syntastic_check_on_open = 1$/;"	v
+g:syntastic_check_on_wq	.vimrc	/^let g:syntastic_check_on_wq = 0$/;"	v
+g:syntastic_python_checkers	.vimrc	/^let g:syntastic_python_checkers = ['flake8']$/;"	v

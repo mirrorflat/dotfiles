@@ -156,7 +156,13 @@ augroup ctags
     if has('mac') || has('unix')
         autocmd BufWritePost * silent !ctags -a -R -f.tags 2> /dev/null
     elseif has('win32') || has ('win64')
-        " Winowsで開発する場合は記述対応
+        " (windos)
+        " ctags バイナリをパスの通ったところに置く
+        " windows ではtags というファイル名
+        " 外部ライブラリ追加も
+        "  ctags -a -R c:\somewhere\lib\python3.6\site-packages
+        set tags=tags;$HOME
+        autocmd BufWritePost * silent !ctags -a -R %
     endif
 augroup END
 " 複数あるときはリスト表示
