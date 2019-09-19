@@ -7,6 +7,7 @@
 " $ git clone https://github.com/k-takata/minpac.git vimfiles\pack\minpac\opt\minpac
 " vimtweak.dllをgvim.exeと同じディレクトリにコピー
 " ctags をPATHの通った場所にコピー
+" pyformating.bat をPATHの通った場所にコピー
 "
 " initial(mac):
 " $ mkdir -p ~/.vim/pack/minpac/opt
@@ -158,7 +159,7 @@ augroup ctags
         autocmd BufWritePost * silent !ctags -a -R -f.tags 2> /dev/null
     elseif has('win32') || has ('win64')
         set tags=tags;$HOME
-        autocmd BufWritePost * silent !ctags -a % 2> null
+        autocmd BufWritePost * silent !ctags -a % 2> nul
     endif
 augroup END
 " 複数あるときはリスト表示
