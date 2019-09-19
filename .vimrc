@@ -5,6 +5,8 @@
 " initial(win):
 " $ cd $HOME
 " $ git clone https://github.com/k-takata/minpac.git vimfiles\pack\minpac\opt\minpac
+" vimtweak.dllをgvim.exeと同じディレクトリにコピー
+" ctags をPATHの通った場所にコピー
 "
 " initial(mac):
 " $ mkdir -p ~/.vim/pack/minpac/opt
@@ -233,8 +235,7 @@ command Small :set guifont=MS_Gothic:h8:cSHIFTJIS guifontwide=MS_Gothic:h8
 command Mid :set guifont=MS_Gothic:h12:cSHIFTJIS guifontwide=MS_Gothic:h12
 command Big :set guifont=MS_Gothic:h20:cSHIFTJIS guifontwide=MS_Gothic:h20
 if has('win32') || has ('win64')
-    command Tsmall :call libcallnr("vimtweak","SetAlpha",255)  
-    command Tmid :call libcallnr("vimtweak","SetAlpha",171)  
-    command Tbig :call libcallnr("vimtweak","SetAlpha",100)
+    command Solid :call libcallnr("vimtweak","SetAlpha",255)  
+    command Liquid :call libcallnr("vimtweak","SetAlpha",171)  
 endif
 
