@@ -108,7 +108,7 @@ filetype indent plugin on
 autocmd FileType python setl autoindent
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd FileType python setl expandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd FileType python set fileformat=unix
+
 
 " Auto formatting
 " -----------------
@@ -187,6 +187,7 @@ elseif has('win32') || has ('win64')
     set fileformats=dos
     set encoding=utf-8
     set fileencodings=utf-8
+    autocmd FileType python set fileformat=unix
     source $VIMRUNTIME/delmenu.vim
     set langmenu=ja_jp.utf-8
     source $VIMRUNTIME/menu.vim
