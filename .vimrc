@@ -157,7 +157,6 @@ augroup ctags
         set tags=.tags;$HOME
         autocmd BufWritePost * silent !ctags -a -R -f.tags 2> /dev/null
     elseif has('win32') || has ('win64')
-        " Winowsで開発する場合は記述対応
         set tags=tags;$HOME
         autocmd BufWritePost * silent !ctags -a % 2> null
     endif
