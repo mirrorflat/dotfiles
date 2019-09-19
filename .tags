@@ -11,9 +11,18 @@
 <Space>s.	.vimrc	/^nnoremap <Space>s. :<C-u>source ~\/.vimrc<CR>$/;"	m
 >	.vimrc	/^vnoremap > >gv$/;"	m
 AutoFormat	.vimrc	/^function! AutoFormat()$/;"	f
+Big	.vimrc	/^command Big :set guifont=MS_Gothic:h20:cSHIFTJIS guifontwide=MS_Gothic:h20$/;"	c
+Mid	.vimrc	/^command Mid :set guifont=MS_Gothic:h12:cSHIFTJIS guifontwide=MS_Gothic:h12$/;"	c
 Preserve	.vimrc	/^function! Preserve(command)$/;"	f
+Small	.vimrc	/^command Small :set guifont=MS_Gothic:h8:cSHIFTJIS guifontwide=MS_Gothic:h8$/;"	c
 SyntasticDisableBuffer	.vimrc	/^command! SyntasticDisableBuffer call SyntasticDisableBuffer()$/;"	c
 SyntasticDisableBuffer	.vimrc	/^function! SyntasticDisableBuffer()$/;"	f
+Tbig	.vimrc	/^    command Tbig :call libcallnr("vimtweak","SetAlpha",100)$/;"	c
+Tbig	.vimrc	/^command Tbig :call libcallnr("vimtweak","SetAlpha",100)$/;"	c
+Tmid	.vimrc	/^    command Tmid :call libcallnr("vimtweak","SetAlpha",171)  $/;"	c
+Tmid	.vimrc	/^command Tmid :call libcallnr("vimtweak","SetAlpha",171)  $/;"	c
+Tsmall	.vimrc	/^    command Tsmall :call libcallnr("vimtweak","SetAlpha",255)  $/;"	c
+Tsmall	.vimrc	/^command Tsmall :call libcallnr("vimtweak","SetAlpha",255)  $/;"	c
 cch	.vimrc	/^augroup cch$/;"	a
 ctags	.vimrc	/^augroup ctags$/;"	a
 dotfiles	README.rst	/^dotfiles$/;"	c

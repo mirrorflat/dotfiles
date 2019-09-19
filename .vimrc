@@ -69,6 +69,7 @@ call minpac#add('tyru/open-browser.vim')
 " $ rm ~/.vim/pack/minpac/start/previm/preview/css/lib/mermaid.min.css
 let g:previm_show_header = 0
 autocmd FileType rst nnoremap <C-P> :PrevimOpen<CR>
+au BufNewFile,BufRead *.txt setf rst
 
 
 " --------------
@@ -148,21 +149,13 @@ autocmd FileType python nnoremap <S-f> :call AutoFormat()<CR>
 "  $HOME/.tagsにまとめてたけど大きくなるのでシンプルにした
 "  外部ライブラリを解析して加える解析例
 "  ctags -a -f .tags -R ~/.pyenv/versions/3.6.3_usa/lib/python3.6/site-packages/
-set fileformats=unix,dos,mac
-set fileencodings=utf-8,sjis
 set tags=.tags;$HOME
 augroup ctags
     autocmd!
     if has('mac') || has('unix')
         autocmd BufWritePost * silent !ctags -a -R -f.tags 2> /dev/null
     elseif has('win32') || has ('win64')
-        " (windos)
-        " ctags バイナリをパスの通ったところに置く
-        " windows ではtags というファイル名
-        " 外部ライブラリ追加も
-        "  ctags -a -R c:\somewhere\lib\python3.6\site-packages
-        set tags=tags;$HOME
-        autocmd BufWritePost * silent !ctags -a -R %
+        " Winowsで開発する場合は記述対応
     endif
 augroup END
 " 複数あるときはリスト表示
@@ -175,12 +168,23 @@ nnoremap <C-]> g<C-]>
 
 " Basic 
 " -------
-colorscheme default
+colorscheme darkblue
 syntax on
 set expandtab
 set tabstop=4
 set shiftwidth=4
 set vb t_vb=
+if has('mac') || has('unix')
+    set fileformats=unix,dos,mac
+    set fileencodings=utf-8,sjis
+elseif has('win32') || has ('win64')
+    if executable("vimtweak.dll")
+        autocmd guienter * call libcallnr("vimtweak","SetAlpha",171)
+    endif
+    set fileformats=dos
+    set encoding=utf-8
+    set fileencodings=utf-8
+endif
 
 
 " vim-indent-guides
@@ -210,3 +214,27 @@ autocmd! cch
 autocmd WinLeave * set nocursorline
 autocmd WinEnter,BufRead * set cursorline
 augroup END
+
+
+" disable menu ber
+if has('gui')
+  set guioptions-=T
+  set guioptions-=m
+  set guioptions-=r
+  set guioptions-=R
+  set guioptions-=l
+  set guioptions-=L
+  set guioptions-=b
+endif
+
+
+" For prezentation
+command Small :set guifont=MS_Gothic:h8:cSHIFTJIS guifontwide=MS_Gothic:h8
+command Mid :set guifont=MS_Gothic:h12:cSHIFTJIS guifontwide=MS_Gothic:h12
+command Big :set guifont=MS_Gothic:h20:cSHIFTJIS guifontwide=MS_Gothic:h20
+if has('win32') || has ('win64')
+    command Tsmall :call libcallnr("vimtweak","SetAlpha",255)  
+    command Tmid :call libcallnr("vimtweak","SetAlpha",171)  
+    command Tbig :call libcallnr("vimtweak","SetAlpha",100)
+endif
+
