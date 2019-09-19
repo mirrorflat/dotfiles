@@ -151,13 +151,15 @@ autocmd FileType python nnoremap <S-f> :call AutoFormat()<CR>
 "  $HOME/.tagsにまとめてたけど大きくなるのでシンプルにした
 "  外部ライブラリを解析して加える解析例
 "  ctags -a -f .tags -R ~/.pyenv/versions/3.6.3_usa/lib/python3.6/site-packages/
-set tags=.tags;$HOME
 augroup ctags
     autocmd!
     if has('mac') || has('unix')
+        set tags=.tags;$HOME
         autocmd BufWritePost * silent !ctags -a -R -f.tags 2> /dev/null
     elseif has('win32') || has ('win64')
         " Winowsで開発する場合は記述対応
+        set tags=tags;$HOME
+        autocmd BufWritePost * silent !ctags -a % 2> null
     endif
 augroup END
 " 複数あるときはリスト表示
