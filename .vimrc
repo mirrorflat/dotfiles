@@ -108,7 +108,7 @@ filetype indent plugin on
 autocmd FileType python setl autoindent
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd FileType python setl expandtab tabstop=4 shiftwidth=4 softtabstop=4
-
+autocmd FileType python set fileformat=unix
 
 " Auto formatting
 " -----------------
@@ -136,7 +136,7 @@ function! AutoFormat()
     if has('mac') || has('unix')
         call Preserve(':silent %!pyformat --remove-all-unused-imports -a % |patch -o /tmp/pyformat.py %  > /dev/null && if [ $(cat /tmp/pyformat.py |wc -l ) -gt 1 ] ; then isort -d /tmp/pyformat.py;  else  isort -d %; fi')
     elseif has('win32') || has ('win64')
-        " Winowsで開発する場合は記述対応
+        call Preserve(':silent %!pyformating.bat %')
     endif
 endfunction
 autocmd FileType python nnoremap <S-f> :call AutoFormat()<CR>
@@ -187,6 +187,9 @@ elseif has('win32') || has ('win64')
     set fileformats=dos
     set encoding=utf-8
     set fileencodings=utf-8
+    source $VIMRUNTIME/delmenu.vim
+    set langmenu=ja_jp.utf-8
+    source $VIMRUNTIME/menu.vim
 endif
 
 
