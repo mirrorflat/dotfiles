@@ -197,6 +197,7 @@ elseif has('win32') || has ('win64')
     source $VIMRUNTIME/delmenu.vim
     set langmenu=ja_jp.utf-8
     source $VIMRUNTIME/menu.vim
+    set guifont=MS_Gothic:h12 guifontwide=MS_Gothic:h12
 endif
 set backspace=indent,eol,start
 
@@ -260,10 +261,10 @@ endif
 
 
 " For prezentation
-command Small :set guifont=MS_Gothic:h8:cSHIFTJIS guifontwide=MS_Gothic:h8
-command Mid :set guifont=MS_Gothic:h12:cSHIFTJIS guifontwide=MS_Gothic:h12
-command Big :set guifont=MS_Gothic:h20:cSHIFTJIS guifontwide=MS_Gothic:h20
 if has('win32') || has ('win64')
+    command Small :set guifont=MS_Gothic:h8 guifontwide=MS_Gothic:h8
+    command Mid :set guifont=MS_Gothic:h12 guifontwide=MS_Gothic:h12
+    command Big :set guifont=MS_Gothic:h20 guifontwide=MS_Gothic:h20
     command Solid :call libcallnr("vimtweak","SetAlpha",255)  
     command Liquid :call libcallnr("vimtweak","SetAlpha",171)  
 endif

@@ -11,16 +11,21 @@
 <Space>s.	.vimrc	/^nnoremap <Space>s. :<C-u>source ~\/.vimrc<CR>$/;"	m
 >	.vimrc	/^vnoremap > >gv$/;"	m
 AutoFormat	.vimrc	/^function! AutoFormat()$/;"	f
+Big	.vimrc	/^    command Big :set guifont=MS_Gothic:h20 guifontwide=MS_Gothic:h20$/;"	c
 Big	.vimrc	/^command Big :set guifont=MS_Gothic:h20:cSHIFTJIS guifontwide=MS_Gothic:h20$/;"	c
 Liquid	.vimrc	/^    command Liquid :call libcallnr("vimtweak","SetAlpha",171)  $/;"	c
+Mid	.vimrc	/^    command Mid :set guifont=MS_Gothic:h12 guifontwide=MS_Gothic:h12$/;"	c
 Mid	.vimrc	/^command Mid :set guifont=MS_Gothic:h12:cSHIFTJIS guifontwide=MS_Gothic:h12$/;"	c
 Preserve	.vimrc	/^function! Preserve(command)$/;"	f
 SaveWindow	.vimrc	/^  augroup SaveWindow$/;"	a
 SaveWindow	.vimrc	/^augroup SaveWindow$/;"	a
+Small	.vimrc	/^    command Small :set guifont=MS_Gothic:h8 guifontwide=MS_Gothic:h8$/;"	c
 Small	.vimrc	/^command Small :set guifont=MS_Gothic:h8:cSHIFTJIS guifontwide=MS_Gothic:h8$/;"	c
 Solid	.vimrc	/^    command Solid :call libcallnr("vimtweak","SetAlpha",255)  $/;"	c
 SyntasticDisableBuffer	.vimrc	/^command! SyntasticDisableBuffer call SyntasticDisableBuffer()$/;"	c
 SyntasticDisableBuffer	.vimrc	/^function! SyntasticDisableBuffer()$/;"	f
+SyntasticEnableBuffer	.vimrc	/^command! SyntasticEnableBuffer call SyntasticEnableBuffer()$/;"	c
+SyntasticEnableBuffer	.vimrc	/^function! SyntasticEnableBuffer()$/;"	f
 Tbig	.vimrc	/^    command Tbig :call libcallnr("vimtweak","SetAlpha",100)$/;"	c
 Tbig	.vimrc	/^command Tbig :call libcallnr("vimtweak","SetAlpha",100)$/;"	c
 Tmid	.vimrc	/^    command Tmid :call libcallnr("vimtweak","SetAlpha",171)  $/;"	c
