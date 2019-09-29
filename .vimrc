@@ -190,6 +190,7 @@ elseif has('win32') || has ('win64')
     set langmenu=ja_jp.utf-8
     source $VIMRUNTIME/menu.vim
 endif
+set backspace=indent,eol,start
 
 
 " vim-indent-guides
