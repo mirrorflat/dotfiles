@@ -160,7 +160,6 @@ augroup ctags
         autocmd BufWritePost * silent !ctags -a -R -f.tags 2> /dev/null
     elseif has('win32') || has ('win64')
         set tags=tags;$HOME
-        autocmd BufWritePost * silent !ctags -a % 2> nul
     endif
 augroup END
 " 複数あるときはリスト表示
@@ -183,9 +182,6 @@ if has('mac') || has('unix')
     set fileformats=unix,dos,mac
     set fileencodings=utf-8,sjis
 elseif has('win32') || has ('win64')
-    if executable("vimtweak.dll")
-        autocmd guienter * call libcallnr("vimtweak","SetAlpha",171)
-    endif
     set fileformats=dos
     set encoding=utf-8
     set fileencodings=utf-8
