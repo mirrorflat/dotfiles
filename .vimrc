@@ -57,6 +57,7 @@ call minpac#add('vim-syntastic/syntastic')
 call minpac#add('nathanaelkane/vim-indent-guides')
 call minpac#add('previm/previm')
 call minpac#add('tyru/open-browser.vim')
+call minpac#add('Stormherz/tablify')
 
 
 " -------------------
