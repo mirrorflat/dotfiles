@@ -15,6 +15,8 @@ Big	.vimrc	/^command Big :set guifont=MS_Gothic:h20:cSHIFTJIS guifontwide=MS_Got
 Liquid	.vimrc	/^    command Liquid :call libcallnr("vimtweak","SetAlpha",171)  $/;"	c
 Mid	.vimrc	/^command Mid :set guifont=MS_Gothic:h12:cSHIFTJIS guifontwide=MS_Gothic:h12$/;"	c
 Preserve	.vimrc	/^function! Preserve(command)$/;"	f
+SaveWindow	.vimrc	/^  augroup SaveWindow$/;"	a
+SaveWindow	.vimrc	/^augroup SaveWindow$/;"	a
 Small	.vimrc	/^command Small :set guifont=MS_Gothic:h8:cSHIFTJIS guifontwide=MS_Gothic:h8$/;"	c
 Solid	.vimrc	/^    command Solid :call libcallnr("vimtweak","SetAlpha",255)  $/;"	c
 SyntasticDisableBuffer	.vimrc	/^command! SyntasticDisableBuffer call SyntasticDisableBuffer()$/;"	c
@@ -33,8 +35,12 @@ g:indent_guides_color_change_percent	.vimrc	/^let g:indent_guides_color_change_p
 g:indent_guides_enable_on_vim_startup	.vimrc	/^let g:indent_guides_enable_on_vim_startup = 1$/;"	v
 g:indent_guides_guide_size	.vimrc	/^let g:indent_guides_guide_size = 1$/;"	v
 g:previm_show_header	.vimrc	/^let g:previm_show_header = 0$/;"	v
+g:save_window_file	.vimrc	/^  let g:save_window_file = expand('~\/.vimwinpos')$/;"	v
+g:save_window_file	.vimrc	/^let g:save_window_file = expand('~\/.vimwinpos')$/;"	v
 g:syntastic_always_populate_loc_list	.vimrc	/^let g:syntastic_always_populate_loc_list = 1$/;"	v
 g:syntastic_auto_loc_list	.vimrc	/^let g:syntastic_auto_loc_list = 1$/;"	v
 g:syntastic_check_on_open	.vimrc	/^let g:syntastic_check_on_open = 1$/;"	v
 g:syntastic_check_on_wq	.vimrc	/^let g:syntastic_check_on_wq = 0$/;"	v
 g:syntastic_python_checkers	.vimrc	/^let g:syntastic_python_checkers = ['flake8']$/;"	v
+s:save_window	.vimrc	/^    function! s:save_window()$/;"	f
+s:save_window	.vimrc	/^  function! s:save_window()$/;"	f

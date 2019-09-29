@@ -233,6 +233,23 @@ if has('gui')
   set guioptions-=l
   set guioptions-=L
   set guioptions-=b
+  let g:save_window_file = expand('~/.vimwinpos')
+  augroup SaveWindow
+    autocmd!
+    autocmd VimLeavePre * call s:save_window()
+    function! s:save_window()
+      let options = [
+        \ 'set columns=' . &columns,
+        \ 'set lines=' . &lines,
+        \ 'winpos ' . getwinposx() . ' ' . getwinposy(),
+        \ ]
+      call writefile(options, g:save_window_file)
+    endfunction
+  augroup END
+  
+  if filereadable(g:save_window_file)
+    execute 'source' g:save_window_file
+  endif
 endif
 
 
@@ -244,4 +261,3 @@ if has('win32') || has ('win64')
     command Solid :call libcallnr("vimtweak","SetAlpha",255)  
     command Liquid :call libcallnr("vimtweak","SetAlpha",171)  
 endif
-
