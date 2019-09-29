@@ -97,6 +97,14 @@ function! SyntasticDisableBuffer()
     echo 'Syntastic disabled for this buffer'
 endfunction
 command! SyntasticDisableBuffer call SyntasticDisableBuffer()
+function! SyntasticEnableBuffer()
+    let b:syntastic_skip_checks = 0
+    SyntasticReset
+    SyntasticCheck
+    echo 'Syntastic enabled for this buffer'
+endfunction
+command! SyntasticEnableBuffer call SyntasticEnableBuffer()
+
 
 
 " Execute python script with Ctrl-P 
