@@ -72,8 +72,8 @@ call minpac#add('Stormherz/tablify')
 " 'opacity' in mermaid.min.css make things wrong...
 " $ rm ~/.vim/pack/minpac/start/previm/preview/css/lib/mermaid.min.css
 let g:previm_show_header = 0
-autocmd FileType rst nnoremap <C-P> :PrevimOpen<CR>
 au BufNewFile,BufRead *.txt setf rst
+autocmd FileType rst nnoremap <C-P> :PrevimOpen<CR>
 
 
 " --------------
